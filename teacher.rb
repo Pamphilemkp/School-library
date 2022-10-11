@@ -2,14 +2,14 @@ require './person.rb'
 
 # Inherit from person
 class Teacher < Person
- attr_accessor :specialization
+  attr_accessor :specialization
 
-    def initialize(specialization, name = "Unknown", age, parent_permission: true)
+  def initialize(specialization, name = "Unknown", age, parent_permission: true)
     super(name, age, parent_permission)
     @specialization = specialization
-   end
+  end
 
-   def can_use_services?
-     true
-   end
+  def can_use_services?
+    true
+  end
 end
