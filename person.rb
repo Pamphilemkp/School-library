@@ -2,14 +2,14 @@ class Person
   attr_accessor :name, :age, :parent_permission
   attr_reader :id
 
-  def initialize(name = "Unknown", age, parent_permission: true)
+  def initialize(name = 'Unknown', age, parent_permission: true)
     @id = Random.rand(1..100)
     @name = name
     @age = age
     @parent_permission = parent_permission
   end
 
-  private_class_method def self.is_of_age?
+  private_class_method def self.of_age?
     @age >= 18
   end
 
