@@ -1,75 +1,61 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
-
-> Description the project.
-
+# SChool Library
+> In this project i built a library database that will help the librarians at universities to record what books are in the library and who borrows them. 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- RUBY
+- Linters
 
 ## Live Demo (if available)
 
 [Live Demo Link](https://livedemo.com)
+## To get a local copy up and running:
+
+1. Clone this repository or download the zip folder:
+
+**``https://github.com/School-library.git`**
+
+2. Navigate to the location of the folder in your machine:
+
+**``you@your-Pc-name:~$ cd <School-library>``**
+
+To get a local copy up and running follow these simple example steps above.
 
 
-## Getting Started
+### Prerequisites: 
+Any kind of browser. 
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
+### Setup:
+    1. Clone the repository (git clone https://School-library.git)
+    2. Then open the folder in your local environment where you cloned it.
 
 ### Deployment
 
-
+[See project here]()
 
 ## Authors
 
-👤 **Author1**
+👤 **Author**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+   - GitHub:[@pamphilemkp](https://github.com/pamphilemkp)
+   - Twitter:[@pamphilemkp](https://Twitter.com/PamphileMusonda)
+   - LinkedIn:[@pamphilemkp](https://www.linkedin.com/in/pamphile-musonda)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Pamphilemkp/School-library/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
-- Hat tip to anyone whose code was used
 - Inspiration
-- etc
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.
