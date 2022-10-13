@@ -9,6 +9,7 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    super()
   end
 
   private_class_method def self.of_age?
