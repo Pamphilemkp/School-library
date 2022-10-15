@@ -48,6 +48,7 @@ class App
     end
   end
 
+  # rubocop:enable Metrics/CyclomaticComplexity
   def list_of_books
     if @books.empty?
       puts 'There is no book in the library'
@@ -70,7 +71,7 @@ class App
     end
   end
 
-  # rubocop:enable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/ClassLength
   def create_person
     puts 'Do you want to create a student(1) or a teacher(2)? [input the number]'
     number = gets.chomp.to_i
