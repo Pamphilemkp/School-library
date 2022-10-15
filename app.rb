@@ -32,7 +32,7 @@ class App
     display_choice
     puts '=============================='
 
-    puts 'Enter your choice'
+    puts 'Enter your choice:'
     choice = gets.chomp.to_i
 
     case choice
@@ -72,31 +72,31 @@ class App
   end
 
   def create_person
-    puts 'Do you want to create a student(1) or a teacher(2)? [input the number]'
+    puts 'Do you want to create a student(1) or a teacher(2)?'
     number = gets.chomp.to_i
 
     case number
     when 1
-      puts 'enter classroom'
+      puts 'enter classroom:'
       classroom = gets.capitalize.chomp
-      puts 'Age'
+      puts 'Age:'
       age = gets.chomp.to_i
-      puts 'Name'
+      puts 'Name:'
       name = gets.capitalize.chomp
       puts 'Has permission? [Y/N]'
       permission = gets.capitalize.chomp
-      @people << if permission == 'N'
+      @people << if permission == 'Y'
                    Student.new(classroom, age, name, parent_permission: true)
                  else
                    Student.new(classroom, age, name, parent_permission: false)
                  end
 
     when 2
-      puts 'enter specialization'
+      puts 'enter specialization:'
       specialization = gets.capitalize.chomp
-      puts 'Age'
+      puts 'Age:'
       age = gets.chomp.to_i
-      puts 'Name'
+      puts 'Name:'
       name = gets.capitalize.chomp
       @people << Teacher.new(specialization, age, name)
       puts 'person created successful'
@@ -107,9 +107,9 @@ class App
   end
 
   def create_book
-    puts 'Title'
+    puts 'Title:'
     title = gets.capitalize.chomp
-    puts 'Author'
+    puts 'Author:'
     author = gets.capitalize.chomp
     @books.push(Book.new(title, author))
   end
@@ -123,7 +123,7 @@ class App
       puts "Person with id: #{id} not found, please try again"
     else
       list_of_books
-      puts 'Enter book title'
+      puts 'Enter book title:'
       title = gets.capitalize.chomp
       book = @books.find { |f_book| f_book.title = title }
       if book.nil?
@@ -149,7 +149,7 @@ class App
     else
       puts "Rentals for #{person.name}:"
       person.rentals.each do |rental|
-        puts "#{rental.date} - #{rental.book.title} by #{rental.book.author}"
+        puts "Date: #{rental.date}"
       end
     end
   end
