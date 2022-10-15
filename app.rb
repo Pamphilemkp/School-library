@@ -26,6 +26,7 @@ class App
     puts '7 - Exit'
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def user_input
     puts '=============================='
     display_choice
@@ -69,6 +70,7 @@ class App
     end
   end
 
+  # rubocop:enable Metrics/CyclomaticComplexity
   def create_person
     puts 'Do you want to create a student(1) or a teacher(2)? [input the number]'
     number = gets.chomp.to_i
@@ -97,7 +99,7 @@ class App
       puts 'Name'
       name = gets.capitalize.chomp
       @people << Teacher.new(specialization, age, name)
-      puts "person created successful"
+      puts 'person created successful'
 
     else
       puts 'Invalid choice, please enter the correct choice'
@@ -123,7 +125,7 @@ class App
       list_of_books
       puts 'Enter book title'
       title = gets.capitalize.chomp
-      book = @books.find { |book| book.title = title }
+      book = @books.find { |f_book| f_book.title = title }
       if book.nil?
         puts "Boook with title: #{title} not found, please try again"
       else
@@ -138,7 +140,7 @@ class App
     list_of_people
     puts 'Enter person id:'
     id = gets.chomp.to_i
-    person = @people.find { |person| person.id == id }
+    person = @people.find { |prson| prson.id == id }
     puts person
     if person.nil?
       puts "Person with id: #{id} not found, please try again"
