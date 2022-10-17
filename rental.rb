@@ -6,8 +6,8 @@ class Rental
     @date = date
     @person = person
     @book = book
-    add_person(person)
-    add_book(book)
+    @person.save_rental(self)
+    @book.save_rental(self)
   end
 
   def add_person(person)
