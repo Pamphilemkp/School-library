@@ -11,7 +11,7 @@ class App
     @people = []
     @rentals = []
     @exit = false
-    @display_choice =  Display_choice.new()
+    @display_choice = Displaychoice.new
   end
 
   def run
@@ -105,7 +105,6 @@ class App
     puts 'Author:'
     author = gets.capitalize.chomp
     @books.push(Book.new(title, author))
-
   end
 
   def create_rental
@@ -144,7 +143,6 @@ class App
       puts "Rentals for #{person.name}:"
       person.rentals.each do |rental|
         puts "Date: #{rental.date}"
-        
       end
     end
   end

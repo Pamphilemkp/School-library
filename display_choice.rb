@@ -1,5 +1,5 @@
-class Display_choice
-    def display_choice
+class Displaychoice
+  def display_choice
     puts '1 - List all books'
     puts '2 - List all people'
     puts '3 - Create a person'
@@ -7,5 +7,5 @@ class Display_choice
     puts '5 - Create a rental'
     puts '6 - List all rentals for a given id'
     puts '7 - Exit'
-    end
   end
+end
