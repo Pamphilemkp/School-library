@@ -1,5 +1,6 @@
 require './data/create_book'
 require './data/create_person'
+require_relative './data/create_rental'
 require './student'
 require './teacher'
 require './book'
@@ -15,6 +16,7 @@ class App
     @people = []
     @people_save = []
     @rentals = []
+    @rental_save = []
     @exit = false
     @display_choice = Displaychoice.new
   end
@@ -36,8 +38,8 @@ class App
     when 1 then list_of_books
     when 2 then list_of_people
     when 3 then CreatePerson.people(@people)
-    when 4 then @books.push(Create_book.new.create_book)
-    when 5 then create_rental
+    when 4 then @books.push(CreateBook.new.create_book)
+    when 5 then @rentals << CreateRental.new.rental(@people, @books)
     when 6 then list_all_rentals
     when 7 then @exit = true
     else
@@ -85,28 +87,6 @@ class App
     end
   end
 
-  def create_rental
-    list_of_people
-    puts 'Enter person id:'
-    id = gets.chomp.to_i
-    person = @people.find { |prson| prson.id == id }
-    if person.nil?
-      puts "Person with id: #{id} not found, please try again"
-    else
-      list_of_books
-      puts 'Enter book title:'
-      title = gets.capitalize.chomp
-      book = @books.find { |f_book| f_book.title = title }
-      if book.nil?
-        puts "Boook with title: #{title} not found, please try again"
-      else
-        puts 'Enter rental date (YYYY-MM-DD):'
-        date = gets.chomp
-        @rentals << Rental.new(date, book, person)
-      end
-    end
-  end
-
   def list_all_rentals
     list_of_people
     puts 'Enter person id:'
@@ -121,6 +101,12 @@ class App
       puts "Rentals for #{person.name}:"
       person.rentals.each do |rental|
         puts "Date: #{rental.date}"
+
+        rental_obj = {
+          date: rental.date
+        }
+        @rental_save << rental_obj
+        File.write('./rental_save.json', JSON.generate(@rental_save))
       end
     end
   end
