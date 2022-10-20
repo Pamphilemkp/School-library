@@ -1,13 +1,17 @@
+require './data/create_book'
 require './student'
 require './teacher'
 require './book'
 require './rental'
 require './person'
 require './display_choice'
+require 'json'
+
 
 class App
   def initialize
     @books = []
+    @book_save = []
     @people = []
     @rentals = []
     @exit = false
@@ -31,7 +35,7 @@ class App
     when 1 then list_of_books
     when 2 then list_of_people
     when 3 then create_person
-    when 4 then create_book
+    when 4 then @books.push(Create_book.new.create_book)
     when 5 then create_rental
     when 6 then list_all_rentals
     when 7 then @exit = true
@@ -40,7 +44,8 @@ class App
     end
   end
 
-  # rubocop:enable Metrics/CyclomaticComplexity
+
+
   def list_of_books
     if @books.empty?
       puts 'There is no book in the library'
@@ -48,10 +53,19 @@ class App
       puts 'List of all books'
       @books.each do |book|
         puts "Title :#{book.title},  Author: #{book.author}"
+        
+        book_obj = {
+          title: book.title,
+          author: book.author
+        }
+        @book_save.push(book_obj)
+
+        File.write('books_save.json', JSON.generate(@book_save))
       end
     end
   end
 
+  # rubocop:enable Metrics/CyclomaticComplexity
   def list_of_people
     if @people.empty?
       puts 'There is no book in the library'
@@ -97,14 +111,6 @@ class App
     else
       puts 'Invalid choice, please enter the correct choice'
     end
-  end
-
-  def create_book
-    puts 'Title:'
-    title = gets.capitalize.chomp
-    puts 'Author:'
-    author = gets.capitalize.chomp
-    @books.push(Book.new(title, author))
   end
 
   def create_rental
