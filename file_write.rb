@@ -9,7 +9,7 @@ class FileWrite
         }
         @book_save.push(book_obj)
 
-        File.write('books_save.json', JSON.generate(@book_save))
+        File.write('./storage/books_save.json', JSON.generate(@book_save))
       end
     end
 
@@ -22,7 +22,7 @@ class FileWrite
           age: person.age
         }
         @people_save << people_obj
-        File.write('./people_save.json', JSON.generate(@people_save))
+        File.write('./storage/people_save.json', JSON.generate(@people_save))
       end
     end
 
@@ -33,7 +33,7 @@ class FileWrite
           date: rental.date
         }
         @rental_save << rental_obj
-        File.write('./rental_save.json', JSON.generate(@rental_save))
+        File.write('./storage/rental_save.json', JSON.generate(@rental_save))
       end
     end
   end

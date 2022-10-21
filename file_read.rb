@@ -8,7 +8,7 @@ class FileRead
   class << self
     def books
       books_save = []
-      file_path = './books_save.json'
+      file_path = './storage/books_save.json'
 
       if File.exist?(file_path) && File.read(file_path) != ''
         books_data = JSON.parse(File.read(file_path))
@@ -22,7 +22,7 @@ class FileRead
 
     def people
       people_save = []
-      file_path = './people_save.json'
+      file_path = './storage/people_save.json'
 
       if File.exist?(file_path) && File.read(file_path) != ''
         people_data = JSON.parse(File.read(file_path))
