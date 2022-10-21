@@ -48,6 +48,11 @@ Any kind of browser.
    - GitHub:[@markotuya](https://github.com/markotuya0)
    - Twitter:[@pamphilemkp](https://Twitter.com/mark__anthonny)
    - LinkedIn:[@pamphilemkp](https://www.linkedin.com/in/mark-anthonny)
+ 
+👤 **Patrick Maina**
+
+- GitHub: [@PNdunguMaina](https://github.com/PNdunguMaina)
+- LinkedIn: [Patrick Maina](https://www.linkedin.com/in/pndungumaina/)
 
 ## 🤝 Contributing
 
