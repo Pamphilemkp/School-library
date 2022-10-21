@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # SChool Library
-> In this project i built a library database that will help the librarians at universities to record what books are in the library and who borrows them. 
+> In this project we built a library database that will help the librarians at universities to record what books are in the library and who borrows them. 
 
 ## Built With
 
@@ -37,13 +37,24 @@ Any kind of browser.
 
 ## Authors
 
-👤 **Author**
+👤 **Author 1**
 
    - GitHub:[@pamphilemkp](https://github.com/pamphilemkp)
    - Twitter:[@pamphilemkp](https://Twitter.com/PamphileMusonda)
    - LinkedIn:[@pamphilemkp](https://www.linkedin.com/in/pamphile-musonda)
    
    👤 **Patrick Maina**
+
+- GitHub: [@PNdunguMaina](https://github.com/PNdunguMaina)
+- LinkedIn: [Patrick Maina](https://www.linkedin.com/in/pndungumaina/)
+
+👤 **Author 2**
+
+   - GitHub:[@markotuya](https://github.com/markotuya0)
+   - Twitter:[@pamphilemkp](https://Twitter.com/mark__anthonny)
+   - LinkedIn:[@pamphilemkp](https://www.linkedin.com/in/mark-anthonny)
+ 
+👤 **Patrick Maina**
 
 - GitHub: [@PNdunguMaina](https://github.com/PNdunguMaina)
 - LinkedIn: [Patrick Maina](https://www.linkedin.com/in/pndungumaina/)

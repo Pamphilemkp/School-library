@@ -1,15 +1,24 @@
+require './data/create_book'
+require './data/create_person'
+require_relative './data/create_rental'
+require_relative './data_list/people_list'
+require_relative './data_list/books_list'
+require_relative './data_list/rentals_list'
+require './file_write'
+require_relative './file_read'
 require './student'
 require './teacher'
 require './book'
 require './rental'
 require './person'
 require './display_choice'
+require 'json'
 
 class App
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
+    @books = FileRead.books
+    @people = FileRead.people
+    @rentals = FileRead.rentals(@people, @books)
     @exit = false
     @display_choice = Displaychoice.new
   end
@@ -28,122 +37,20 @@ class App
     choice = gets.chomp.to_i
 
     case choice
-    when 1 then list_of_books
-    when 2 then list_of_people
-    when 3 then create_person
-    when 4 then create_book
-    when 5 then create_rental
-    when 6 then list_all_rentals
-    when 7 then @exit = true
+    when 1 then BooksList.new.list_of_books(@books)
+    when 2 then PeopleList.new.list_of_people(@people)
+    when 3 then CreatePerson.people(@people)
+    when 4 then @books.push(CreateBook.new.create_book)
+    when 5 then @rentals << CreateRental.new.rental(@people, @books)
+    when 6 then RentalsList.new.list_all_rentals(@people, @rentals)
+    when 7 then FileWrite.books(@books)
+                FileWrite.people(@people)
+                FileWrite.rentals(@rentals)
+                @exit = true
     else
       puts 'Incorrect choice, please try to enter a correct number'
     end
   end
 
   # rubocop:enable Metrics/CyclomaticComplexity
-  def list_of_books
-    if @books.empty?
-      puts 'There is no book in the library'
-    else
-      puts 'List of all books'
-      @books.each do |book|
-        puts "Title :#{book.title},  Author: #{book.author}"
-      end
-    end
-  end
-
-  def list_of_people
-    if @people.empty?
-      puts 'There is no book in the library'
-    else
-
-      puts 'List of all people'
-      @people.each do |person|
-        puts "#{person.name} (id: #{person.id}), age: #{person.age}"
-      end
-    end
-  end
-
-  def create_person
-    puts 'Do you want to create a student(1) or a teacher(2)?'
-    number = gets.chomp.to_i
-
-    case number
-    when 1
-      puts 'enter classroom:'
-      classroom = gets.capitalize.chomp
-      puts 'Age:'
-      age = gets.chomp.to_i
-      puts 'Name:'
-      name = gets.capitalize.chomp
-      puts 'Has permission? [Y/N]'
-      permission = gets.capitalize.chomp
-      @people << if permission == 'Y'
-                   Student.new(classroom, age, name, parent_permission: true)
-                 else
-                   Student.new(classroom, age, name, parent_permission: false)
-                 end
-
-    when 2
-      puts 'enter specialization:'
-      specialization = gets.capitalize.chomp
-      puts 'Age:'
-      age = gets.chomp.to_i
-      puts 'Name:'
-      name = gets.capitalize.chomp
-      @people << Teacher.new(specialization, age, name)
-      puts 'person created successful'
-
-    else
-      puts 'Invalid choice, please enter the correct choice'
-    end
-  end
-
-  def create_book
-    puts 'Title:'
-    title = gets.capitalize.chomp
-    puts 'Author:'
-    author = gets.capitalize.chomp
-    @books.push(Book.new(title, author))
-  end
-
-  def create_rental
-    list_of_people
-    puts 'Enter person id:'
-    id = gets.chomp.to_i
-    person = @people.find { |prson| prson.id == id }
-    if person.nil?
-      puts "Person with id: #{id} not found, please try again"
-    else
-      list_of_books
-      puts 'Enter book title:'
-      title = gets.capitalize.chomp
-      book = @books.find { |f_book| f_book.title = title }
-      if book.nil?
-        puts "Boook with title: #{title} not found, please try again"
-      else
-        puts 'Enter rental date (YYYY-MM-DD):'
-        date = gets.chomp
-        @rentals << Rental.new(date, book, person)
-      end
-    end
-  end
-
-  def list_all_rentals
-    list_of_people
-    puts 'Enter person id:'
-    id = gets.chomp.to_i
-    person = @people.find { |prson| prson.id == id }
-    puts person
-    if person.nil?
-      puts "Person with id: #{id} not found, please try again"
-    elsif person.rentals.empty?
-      puts "No rentals for #{person.name}"
-    else
-      puts "Rentals for #{person.name}:"
-      person.rentals.each do |rental|
-        puts "Date: #{rental.date}"
-      end
-    end
-  end
 end
