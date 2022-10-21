@@ -1,3 +1,4 @@
+# rubocop: disable Style/OptionalBooleanParameter
 require './person'
 
 # Inherit from person
@@ -14,7 +15,6 @@ class Student < Person
     classroom.students.push(self) unless classroom.students.include?(self)
   end
 
-  # File 'lib/rubocop/cop/style/redundant_regexp_escape.rb', line 18
   def play_hooky
     "¯\(ツ)/¯"
   end
