@@ -3,6 +3,7 @@ require './teacher'
 require './book'
 require './rental'
 require './person'
+require './display_choice'
 
 class App
   def initialize
@@ -10,26 +11,17 @@ class App
     @people = []
     @rentals = []
     @exit = false
+    @display_choice = Displaychoice.new
   end
 
   def run
     user_input until @exit
   end
 
-  def display_choice
-    puts '1 - List all books'
-    puts '2 - List all people'
-    puts '3 - Create a person'
-    puts '4 - Create a book'
-    puts '5 - Create a rental'
-    puts '6 - List all rentals for a given id'
-    puts '7 - Exit'
-  end
-
   # rubocop:disable Metrics/CyclomaticComplexity
   def user_input
     puts '=============================='
-    display_choice
+    @display_choice.display_choice
     puts '=============================='
 
     puts 'Enter your choice:'
@@ -64,6 +56,7 @@ class App
     if @people.empty?
       puts 'There is no book in the library'
     else
+
       puts 'List of all people'
       @people.each do |person|
         puts "#{person.name} (id: #{person.id}), age: #{person.age}"
