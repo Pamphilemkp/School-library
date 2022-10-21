@@ -1,4 +1,3 @@
-# rubocop: disable Style/OptionalBooleanParameter
 require './person'
 
 # Inherit from person
@@ -16,6 +15,6 @@ class Student < Person
   end
 
   def play_hooky
-    "¯/\(ツ)/¯"
+    "¯/(ツ)/¯"
   end
 end
