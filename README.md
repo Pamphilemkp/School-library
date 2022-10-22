@@ -51,8 +51,8 @@ Any kind of browser.
 👤 **Author 2**
 
    - GitHub:[@markotuya](https://github.com/markotuya0)
-   - Twitter:[@pamphilemkp](https://Twitter.com/mark__anthonny)
-   - LinkedIn:[@pamphilemkp](https://www.linkedin.com/in/mark-anthonny)
+   - Twitter:[@markotuya](https://Twitter.com/mark__anthonny)
+   - LinkedIn:[@markotuya](https://www.linkedin.com/in/mark-otuya)
  
 👤 **Patrick Maina**
 
