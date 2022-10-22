@@ -1,4 +1,4 @@
-require_relative '../classroom '
+require_relative '../classroom'
 require_relative '../student'
 
 describe('checking the student data') do
@@ -10,7 +10,6 @@ describe('checking the student data') do
       name = student.name
       age = student.age
       parent_permission = student.parent_permission
-      id = student.id
       classroom = student.classroom.label
       expect(name).to eq 'john doe'
       expect(age).to eq 21

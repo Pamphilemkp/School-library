@@ -1,4 +1,4 @@
-require_relative '../classroom '
+require_relative '../classroom'
 
 describe('checking student classroom') do
   it('should return the classroom') do
