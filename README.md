@@ -42,11 +42,6 @@ Any kind of browser.
    - GitHub:[@pamphilemkp](https://github.com/pamphilemkp)
    - Twitter:[@pamphilemkp](https://Twitter.com/PamphileMusonda)
    - LinkedIn:[@pamphilemkp](https://www.linkedin.com/in/pamphile-musonda)
-   
-   👤 **Patrick Maina**
-
-- GitHub: [@PNdunguMaina](https://github.com/PNdunguMaina)
-- LinkedIn: [Patrick Maina](https://www.linkedin.com/in/pndungumaina/)
 
 👤 **Author 2**
 
